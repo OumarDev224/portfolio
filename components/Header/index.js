@@ -64,53 +64,55 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               className={`absolute right-0 z-10 w-11/12 p-4 ${theme === "dark" ? "bg-slate-800" : "bg-white"
                 } shadow-md rounded-md`}
             >
-              {!isBlog ? (
-                <div className="grid grid-cols-1">
-                  {/* <Button onClick={handleWorkScroll}>Work</Button> */}
-                  <Button onClick={handleAboutScroll}>About</Button>
-                  {/* {showBlog && (
+              {
+                !isBlog ? (
+                  <div className="grid grid-cols-1">
+                    {/* <Button onClick={handleWorkScroll}>Work</Button> */}
+                    <Button onClick={handleAboutScroll}>About</Button>
+                    {/* {showBlog && (
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )} */}
-                  {showResume && (
-                    <Button
-                      onClick={() =>
-                        window.open("mailto:hello@chetanverma.com")
-                      }
-                    >
-                      Resume
-                    </Button>
-                  )}
+                    {showResume && (
+                      <Button
+                        onClick={() => router.push("/resume")}
+                        classes="first:ml-1"
+                      >
+                        Resume
+                      </Button>
+                    )}
 
-                  <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
-                  >
-                    Contact
-                  </Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1">
-                  <Button onClick={() => router.push("/")} classes="first:ml-1">
-                    Home
-                  </Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
-                  )}
-                  {showResume && (
                     <Button
-                      onClick={() => router.push("/resume")}
-                      classes="first:ml-1"
+                      onClick={() => window.open("mailto:dianeoumar197@gmail.com")}
                     >
-                      Resume
+                      Contact
                     </Button>
-                  )}
+                  </div>
+                ) :
 
-                  <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
-                  >
-                    Contact
-                  </Button>
-                </div>
-              )}
+                  (
+                    <div className="grid grid-cols-1">
+                      <Button onClick={() => router.push("/")} classes="first:ml-1">
+                        Home
+                      </Button>
+                      {showBlog && (
+                        <Button onClick={() => router.push("/blog")}>Blog</Button>
+                      )}
+                      {showResume && (
+                        <Button
+                          onClick={() => router.push("/resume")}
+                          classes="first:ml-1"
+                        >
+                          Resume
+                        </Button>
+                      )}
+
+                      <Button
+                        onClick={() => window.open("mailto:hello@chetanverma.com")}
+                      >
+                        Contact
+                      </Button>
+                    </div>
+                  )}
             </Popover.Panel>
           </>
         )}
